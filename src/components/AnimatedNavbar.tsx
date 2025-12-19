@@ -88,10 +88,11 @@ export default function AnimatedNavbar() {
               scale: 1,
               x: stage === NavStage.CENTER ? 0 : stage === NavStage.SPLIT ? '-40vw' : 0,
             }}
-            transition={{
-              duration: stage === NavStage.CENTER ? 0.6 : 1.5,
-              ease: [0.4, 0, 0.2, 1],
-            }}
+           transition={{
+  duration: stage === NavStage.CENTER ? 1.2 : 1.6,
+  ease: [0.22, 1, 0.36, 1], // smoother, cinematic easing
+}}
+
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2 cursor-pointer"
           >

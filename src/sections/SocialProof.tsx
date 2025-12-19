@@ -2,7 +2,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from 'framer
 import { useRef, useEffect } from 'react';
 
 const metrics = [
-  { value: 50000, suffix: '+', label: 'Pickups Completed' },
+  { value: 500, suffix: '+', label: 'Pickups Completed' },
   { value: 98, suffix: '%', label: 'On-Time Rate' },
  { value: 95, suffix: '%', label: 'Issue Resolution Rate' },
   { value: 100, suffix: '%', label: 'Transparent' },

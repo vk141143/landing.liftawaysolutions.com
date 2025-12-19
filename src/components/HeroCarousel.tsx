@@ -38,7 +38,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     autoPlayRef.current = setInterval(() => {
       setCurrentStage((prev) => (prev + 1) % 3);
-    }, 3000);
+    }, 5000);
 
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);

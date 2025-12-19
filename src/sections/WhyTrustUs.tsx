@@ -24,7 +24,6 @@ export default function WhyTrustUs() {
   const leftControls = useAnimation();
   const rightControls = useAnimation();
   const centerControls = useAnimation();
-  const armsControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
@@ -32,15 +31,13 @@ export default function WhyTrustUs() {
       rightControls.start('visible');
       setTimeout(() => {
         centerControls.start('visible');
-        armsControls.start('visible');
       }, 1800);
     } else {
       leftControls.start('hidden');
       rightControls.start('hidden');
       centerControls.start('hidden');
-      armsControls.start('hidden');
     }
-  }, [isInView, leftControls, rightControls, centerControls, armsControls]);
+  }, [isInView, leftControls, rightControls, centerControls]);
 
   return (
     <section
@@ -84,7 +81,7 @@ export default function WhyTrustUs() {
 
           {/* Center Figure */}
           <div className="w-[400px] flex items-center justify-center">
-            <CenterFigure centerControls={centerControls} armsControls={armsControls} />
+            <CenterFigure centerControls={centerControls} />
           </div>
 
           {/* Right Cards */}
@@ -103,7 +100,7 @@ export default function WhyTrustUs() {
 
         {/* Mobile Layout */}
         <div className="lg:hidden flex flex-col items-center gap-12">
-          <CenterFigure centerControls={centerControls} armsControls={armsControls} />
+          <CenterFigure centerControls={centerControls} />
           <div className="w-full flex flex-col gap-6">
             {[...leftCards, ...rightCards].map((card, index) => (
               <TrustCardComponent
@@ -191,103 +188,118 @@ function TrustCardComponent({
 
 function CenterFigure({
   centerControls,
-  armsControls,
 }: {
   centerControls: any;
-  armsControls: any;
 }) {
-
   return (
-    <motion.svg
-      width="300"
-      height="400"
-      viewBox="0 0 300 400"
-      initial="hidden"
+    <motion.div
+      className="relative w-[300px] h-[400px] flex items-center justify-center"
+      initial={{ opacity: 0 }}
       animate={centerControls}
       variants={{
-        hidden: { opacity: 0, scale: 0.96 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          transition: { duration: 1.2, ease: [0.19, 1, 0.22, 1] },
-        },
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.2 } },
       }}
     >
-      {/* Body */}
-      <motion.line
-        x1="150"
-        y1="160"
-        x2="150"
-        y2="260"
-        stroke="#0F5132"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
+      <motion.svg
+        width="200"
+        height="240"
+        viewBox="0 0 200 240"
+        className="absolute"
+      >
+        {/* Shield Base - Draws from bottom up */}
+        <motion.path
+          d="M100 20 L160 60 L160 140 Q160 180 100 220 Q40 180 40 140 L40 60 Z"
+          fill="none"
+          stroke="#0F5132"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="400"
+          initial={{ strokeDashoffset: 400, opacity: 0 }}
+          animate={centerControls}
+          variants={{
+            hidden: { strokeDashoffset: 400, opacity: 0 },
+            visible: {
+              strokeDashoffset: 0,
+              opacity: 1,
+              transition: { delay: 0, duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }
+            }
+          }}
+        />
 
-      {/* Head */}
-      <motion.circle cx="150" cy="140" r="20" stroke="#0F5132" strokeWidth="3" fill="none" />
+        {/* Inner Shield Fill - Appears after outline */}
+        <motion.path
+          d="M100 30 L150 65 L150 135 Q150 170 100 200 Q50 170 50 135 L50 65 Z"
+          fill="#0F5132"
+          fillOpacity="0.08"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={centerControls}
+          variants={{
+            hidden: { opacity: 0, scale: 0.8 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: { delay: 1.0, duration: 0.6, ease: [0.19, 1, 0.22, 1] }
+            }
+          }}
+        />
 
-      {/* Left Arm */}
-      <motion.line
-        x1="150"
-        y1="180"
-        x2="100"
-        y2="180"
-        stroke="#0F5132"
-        strokeWidth="3"
-        strokeLinecap="round"
-        animate={armsControls}
+        {/* Checkmark - Draws last for impact */}
+        <motion.path
+          d="M70 120 L90 140 L130 100"
+          fill="none"
+          stroke="#0F5132"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="80"
+          initial={{ strokeDashoffset: 80, opacity: 0 }}
+          animate={centerControls}
+          variants={{
+            hidden: { strokeDashoffset: 80, opacity: 0 },
+            visible: {
+              strokeDashoffset: 0,
+              opacity: 1,
+              transition: { delay: 1.4, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }
+            }
+          }}
+        />
+      </motion.svg>
+
+      {/* Subtle glow effect */}
+      <motion.div
+        className="absolute w-[180px] h-[180px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(15, 81, 50, 0.1) 0%, transparent 70%)',
+          filter: 'blur(20px)'
+        }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={centerControls}
         variants={{
-          hidden: { x2: 150, y2: 180 },
+          hidden: { opacity: 0, scale: 0.5 },
           visible: {
-            x2: 100,
-            y2: 210,
-            transition: { duration: 1.2, ease: [0.19, 1, 0.22, 1] },
-          },
+            opacity: 1,
+            scale: 1,
+            transition: { delay: 2.0, duration: 0.8, ease: 'easeOut' }
+          }
         }}
       />
 
-      {/* Right Arm */}
-      <motion.line
-        x1="150"
-        y1="180"
-        x2="200"
-        y2="180"
-        stroke="#0F5132"
-        strokeWidth="3"
-        strokeLinecap="round"
-        animate={armsControls}
+      {/* Final pulse effect */}
+      <motion.div
+        className="absolute w-[200px] h-[200px] rounded-full border-2 border-[#0F5132]/20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={centerControls}
         variants={{
-          hidden: { x2: 150, y2: 180 },
+          hidden: { opacity: 0, scale: 0.8 },
           visible: {
-            x2: 200,
-            y2: 210,
-            transition: { duration: 1.2, ease: [0.19, 1, 0.22, 1] },
-          },
+            opacity: [0, 0.6, 0],
+            scale: [0.8, 1.2, 1.4],
+            transition: { delay: 2.2, duration: 1.0, ease: 'easeOut' }
+          }
         }}
       />
-
-      {/* Left Leg */}
-      <motion.line
-        x1="150"
-        y1="260"
-        x2="120"
-        y2="310"
-        stroke="#0F5132"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-
-      {/* Right Leg */}
-      <motion.line
-        x1="150"
-        y1="260"
-        x2="180"
-        y2="310"
-        stroke="#0F5132"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-    </motion.svg>
+    </motion.div>
   );
 }
