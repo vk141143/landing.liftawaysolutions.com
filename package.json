@@ -1,6 +1,7 @@
 {
   "name": "liftaway-react",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "framer-motion": "^10.18.0",
