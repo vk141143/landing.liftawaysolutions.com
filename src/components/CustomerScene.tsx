@@ -46,10 +46,10 @@ export default function CustomerScene() {
         className="absolute left-20 bottom-32"
       >
         <div className="relative">
-          <div className="w-16 h-28 bg-[#0F5132] rounded-lg border-4 border-[#0F5132] shadow-lg">
+          <div className="w-16 h-28 bg-primary rounded-lg border-4 border-primary shadow-lg">
             <div className="w-full h-full bg-white rounded-md p-1">
-              <div className="w-full h-2 bg-[#D1E7DD] rounded-full mb-1" />
-              <div className="w-3/4 h-2 bg-[#D1E7DD] rounded-full" />
+              <div className="w-full h-2 bg-secondary rounded-full mb-1" />
+              <div className="w-3/4 h-2 bg-secondary rounded-full" />
             </div>
           </div>
 
@@ -60,7 +60,7 @@ export default function CustomerScene() {
             transition={{ duration: 0.6, delay: 1.8, repeat: 1 }}
             className="absolute inset-0 flex items-center justify-center"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-[#FF6F00]" />
+            <div className="w-12 h-12 rounded-full border-2 border-orange-500" />
           </motion.div>
         </div>
       </motion.div>

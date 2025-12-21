@@ -102,7 +102,7 @@ export default function AnimatedNavbar() {
                 initial={{ opacity: 0, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-2xl font-bold text-[#0F5132] hidden md:block"
+                className="text-2xl font-bold text-primary hidden md:block"
               >
                 LiftAway
               </motion.span>
@@ -119,10 +119,10 @@ export default function AnimatedNavbar() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.0 + i * 0.1, duration: 0.4 }}
-                  className="relative text-[#1F1F1F] font-medium hover:text-[#0F5132] transition-colors group"
+                  className="relative text-dark font-medium hover:text-primary transition-colors group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#0F5132] group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
                 </motion.button>
               ))}
           </div>
@@ -146,7 +146,7 @@ export default function AnimatedNavbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={logout}
-                className="bg-gradient-to-r from-[#0F5132] to-[#1a7a4f] text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all"
+                className="bg-gradient-to-r from-primary to-primary/80 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all"
               >
                 Logout
               </motion.button>
@@ -156,7 +156,7 @@ export default function AnimatedNavbar() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => window.location.href = '/flutter/#/login'}
-                  className="text-[#0F5132] font-semibold px-4 py-2 rounded-lg hover:bg-[#D1E7DD]/30 transition-colors"
+                  className="text-primary font-semibold px-4 py-2 rounded-lg hover:bg-secondary/30 transition-colors"
                 >
                   Login
                 </motion.button>
@@ -164,7 +164,7 @@ export default function AnimatedNavbar() {
                   whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(15, 81, 50, 0.3)' }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => window.location.href = '/flutter/#/register'}
-                  className="bg-gradient-to-r from-[#0F5132] to-[#1a7a4f] text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all"
+                  className="bg-gradient-to-r from-primary to-primary/80 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all"
                 >
                   Sign Up
                 </motion.button>
@@ -181,7 +181,7 @@ export default function AnimatedNavbar() {
         animate={{ opacity: stage === NavStage.READY ? 1 : 0 }}
         transition={{ delay: 1.5 }}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden fixed bottom-6 left-6 z-50 w-14 h-14 bg-gradient-to-br from-[#0F5132] to-[#2D7A4F] rounded-full shadow-lg flex items-center justify-center"
+        className="md:hidden fixed bottom-6 left-6 z-50 w-14 h-14 bg-gradient-to-br from-primary to-green-700 rounded-full shadow-lg flex items-center justify-center"
       >
         <motion.div
           animate={isMobileMenuOpen ? { rotate: 180 } : { rotate: 0 }}
@@ -225,7 +225,7 @@ export default function AnimatedNavbar() {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: i * 0.1, duration: 0.3 }}
                     onClick={() => handleMenuClick(item.path)}
-                    className="w-full text-left px-4 py-3 text-[#0F5132] font-medium hover:bg-[#D1E7DD]/30 rounded-lg transition-colors"
+                    className="w-full text-left px-4 py-3 text-primary font-medium hover:bg-secondary/30 rounded-lg transition-colors"
                   >
                     {item.label}
                   </motion.button>
@@ -237,15 +237,15 @@ export default function AnimatedNavbar() {
                   className="pt-4 border-t border-[#0F5132]/10 space-y-3"
                 >
                   {isLoggedIn() ? (
-                    <button onClick={logout} className="w-full px-4 py-2 bg-gradient-to-r from-[#0F5132] to-[#2D7A4F] text-white font-semibold rounded-lg shadow-md">
+                    <button onClick={logout} className="w-full px-4 py-2 bg-gradient-to-r from-primary to-green-700 text-white font-semibold rounded-lg shadow-md">
                       Logout
                     </button>
                   ) : (
                     <>
-                      <button onClick={() => window.location.href = '/flutter/#/login'} className="w-full text-left px-4 py-2 text-[#0F5132] font-semibold hover:bg-[#D1E7DD]/30 rounded-lg transition-colors">
+                      <button onClick={() => window.location.href = '/flutter/#/login'} className="w-full text-left px-4 py-2 text-primary font-semibold hover:bg-secondary/30 rounded-lg transition-colors">
                         Login
                       </button>
-                      <button onClick={() => window.location.href = '/flutter/#/register'} className="w-full px-4 py-2 bg-gradient-to-r from-[#0F5132] to-[#2D7A4F] text-white font-semibold rounded-lg shadow-md">
+                      <button onClick={() => window.location.href = '/flutter/#/register'} className="w-full px-4 py-2 bg-gradient-to-r from-primary to-green-700 text-white font-semibold rounded-lg shadow-md">
                         Sign Up
                       </button>
                     </>

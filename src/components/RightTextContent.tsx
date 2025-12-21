@@ -21,7 +21,7 @@ export default function RightTextContent({ slide }: RightTextContentProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F1F1F] leading-tight"
+        className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight"
       >
         {slide.title}
       </motion.h1>
@@ -30,7 +30,7 @@ export default function RightTextContent({ slide }: RightTextContentProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="text-lg md:text-xl text-[#1F1F1F]/70 leading-relaxed"
+        className="text-lg md:text-xl text-dark/70 leading-relaxed"
       >
         {slide.subtitle}
       </motion.p>
@@ -42,7 +42,7 @@ export default function RightTextContent({ slide }: RightTextContentProps) {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => window.location.href = '/flutter/'}
-        className="px-8 py-4 bg-gradient-to-r from-[#0F5132] to-[#1a7a4f] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+        className="px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
       >
         {slide.cta}
       </motion.button>

@@ -28,12 +28,12 @@ export default function DriverScene() {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="absolute right-24 top-28"
       >
-        <div className="w-20 h-32 bg-[#0F5132] rounded-xl border-4 border-[#0F5132] shadow-xl">
+        <div className="w-20 h-32 bg-primary rounded-xl border-4 border-primary shadow-xl">
           <div className="w-full h-full bg-white rounded-lg p-2 flex flex-col gap-1">
-            <div className="w-full h-3 bg-[#D1E7DD] rounded" />
-            <div className="w-2/3 h-2 bg-[#D1E7DD] rounded" />
+            <div className="w-full h-3 bg-secondary rounded" />
+            <div className="w-2/3 h-2 bg-secondary rounded" />
             <div className="flex-1" />
-            <div className="w-full h-8 bg-gradient-to-r from-[#0F5132] to-[#1a7a4f] rounded-md" />
+            <div className="w-full h-8 bg-gradient-to-r from-primary to-primary/80 rounded-md" />
           </div>
         </div>
 
@@ -45,13 +45,13 @@ export default function DriverScene() {
           className="absolute -top-2 -right-2"
         >
           <div className="relative">
-            <div className="w-8 h-8 bg-[#FF6F00] rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
               <span className="text-white text-xs font-bold">1</span>
             </div>
             <motion.div
               animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="absolute inset-0 bg-[#FF6F00] rounded-full"
+              className="absolute inset-0 bg-orange-500 rounded-full"
             />
           </div>
         </motion.div>

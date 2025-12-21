@@ -48,14 +48,14 @@ export default function CompletionScene() {
         className="absolute left-1/2 top-32 -translate-x-1/2"
       >
         <div className="relative">
-          <div className="bg-white border-2 border-[#0F5132] rounded-2xl px-6 py-3 shadow-lg">
+          <div className="bg-white border-2 border-primary rounded-2xl px-6 py-3 shadow-lg">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#0F5132] rounded-full animate-pulse" />
-              <div className="w-2 h-2 bg-[#0F5132] rounded-full animate-pulse delay-100" />
-              <div className="w-2 h-2 bg-[#0F5132] rounded-full animate-pulse delay-200" />
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-100" />
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-200" />
             </div>
           </div>
-          <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r-2 border-b-2 border-[#0F5132] transform rotate-45" />
+          <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r-2 border-b-2 border-primary transform rotate-45" />
         </div>
       </motion.div>
 
@@ -70,7 +70,7 @@ export default function CompletionScene() {
           <motion.div
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-20 h-20 bg-gradient-to-br from-[#0F5132] to-[#1a7a4f] rounded-full flex items-center justify-center shadow-xl"
+            className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-xl"
           >
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
               <path
@@ -87,7 +87,7 @@ export default function CompletionScene() {
           <motion.div
             animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0, 0.3] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute inset-0 bg-[#0F5132] rounded-full blur-xl"
+            className="absolute inset-0 bg-primary rounded-full blur-xl"
           />
         </div>
       </motion.div>
@@ -108,7 +108,7 @@ export default function CompletionScene() {
         >
           <div
             className={`w-2 h-2 rounded-full ${
-              i % 3 === 0 ? 'bg-[#0F5132]' : i % 3 === 1 ? 'bg-[#FF6F00]' : 'bg-[#D1E7DD]'
+              i % 3 === 0 ? 'bg-primary' : i % 3 === 1 ? 'bg-orange-500' : 'bg-secondary'
             }`}
           />
         </motion.div>
