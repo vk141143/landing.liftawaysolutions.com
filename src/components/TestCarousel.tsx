@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function TestCarousel() {
   const [currentStage, setCurrentStage] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
     console.log('TestCarousel mounted, starting interval...');

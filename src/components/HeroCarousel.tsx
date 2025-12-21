@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import AnimatedNavbar from './AnimatedNavbar';
 import LeftStoryScene from './LeftStoryScene';
 import RightTextContent from './RightTextContent';
