@@ -41,7 +41,7 @@ export default function RightTextContent({ slide }: RightTextContentProps) {
         transition={{ delay: 0.3 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => window.location.href = '/flutter/'}
+        onClick={() => window.open('https://flutter.liftawaysolutions.com', '_blank')}
         className="px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
       >
         {slide.cta}
