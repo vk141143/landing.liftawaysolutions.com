@@ -4,4 +4,4 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_FLAGS = ""
+  NPM_FLAGS = "--production=false"
