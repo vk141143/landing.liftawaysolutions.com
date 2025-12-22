@@ -155,7 +155,7 @@ export default function AnimatedNavbar() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open('https://liftawaysolutions.com/', '_blank')}
+                  onClick={() => window.open('https://www.liftawaysolutions.com/', '_blank')}
                   className="text-primary font-semibold px-4 py-2 rounded-lg hover:bg-secondary/30 transition-colors"
                 >
                   Login
@@ -163,7 +163,7 @@ export default function AnimatedNavbar() {
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(15, 81, 50, 0.3)' }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open('https://liftawaysolutions.com/', '_blank')}
+                  onClick={() => window.open('https://www.liftawaysolutions.com/', '_blank')}
                   className="bg-gradient-to-r from-primary to-primary/80 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all"
                 >
                   Sign Up
@@ -242,10 +242,10 @@ export default function AnimatedNavbar() {
                     </button>
                   ) : (
                     <>
-                      <button onClick={() => window.open('https://liftawaysolutions.com/', '_blank')} className="w-full text-left px-4 py-2 text-primary font-semibold hover:bg-secondary/30 rounded-lg transition-colors">
+                      <button onClick={() => window.open('https://www.liftawaysolutions.com/', '_blank')} className="w-full text-left px-4 py-2 text-primary font-semibold hover:bg-secondary/30 rounded-lg transition-colors">
                         Login
                       </button>
-                      <button onClick={() => window.open('https://liftawaysolutions.com/', '_blank')} className="w-full px-4 py-2 bg-gradient-to-r from-primary to-green-700 text-white font-semibold rounded-lg shadow-md">
+                      <button onClick={() => window.open('https://www.liftawaysolutions.com/', '_blank')} className="w-full px-4 py-2 bg-gradient-to-r from-primary to-green-700 text-white font-semibold rounded-lg shadow-md">
                         Sign Up
                       </button>
                     </>
